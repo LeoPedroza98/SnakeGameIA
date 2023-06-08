@@ -24,7 +24,7 @@ class ManualSnake(BaseGame):
         self.pos_x = DIS_LARG / 2
         self.pos_y = DIS_ALTURA / 2
         self.input_direction = None
-        self.direction = None
+        self.direcao = None
 
         self.food_x = round(random.randrange(0, DIS_LARG - BLOCK_TAM) / 10.0) * 10.0
         self.food_y = round(random.randrange(0, DIS_ALTURA - BLOCK_TAM) / 10.0) * 10.0
@@ -34,13 +34,13 @@ class ManualSnake(BaseGame):
         if event.type == pygame.QUIT:
             self.game_open = False
         if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_LEFT and self.direction != Direcao.DIREITA:
+            if event.key == pygame.K_LEFT and self.direcao != Direcao.DIREITA:
                 self.input_direction = Direcao.ESQUERDA
-            elif event.key == pygame.K_RIGHT and self.direction != Direcao.ESQUERDA:
+            elif event.key == pygame.K_RIGHT and self.direcao != Direcao.ESQUERDA:
                 self.input_direction = Direcao.DIREITA
-            elif event.key == pygame.K_UP and self.direction != Direcao.BAIXO:
+            elif event.key == pygame.K_UP and self.direcao != Direcao.BAIXO:
                 self.input_direction = Direcao.CIMA
-            elif event.key == pygame.K_DOWN and self.direction != Direcao.CIMA:
+            elif event.key == pygame.K_DOWN and self.direcao != Direcao.CIMA:
                 self.input_direction = Direcao.BAIXO
 
     def vida_pos_morte(self):
@@ -83,7 +83,7 @@ class ManualSnake(BaseGame):
             for event in pygame.event.get():
                 self.botoes_usuarios(event)
 
-            self.direction = self.input_direction
+            self.direcao = self.input_direction
             self.movimento_cobra()
             self.come_comida()
             self.funcao_aumenta_tam_cobra()

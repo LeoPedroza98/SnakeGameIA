@@ -8,7 +8,7 @@ class BaseSnake:
         self.snake_list = []
         self.pos_x = DIS_LARG / 2
         self.pos_y = DIS_ALTURA / 2
-        self.direction = None
+        self.direcao = None
 
         # Cria comida pelo mapa é random
         self.food_x = round(random.randrange(0, DIS_LARG - BLOCK_TAM) / 10.0) * 10.0
@@ -18,13 +18,13 @@ class BaseSnake:
 
     def movimento_cobra(self):
         # Verifica a direção atual da cobra e atualiza as coordenadas de acordo
-        if self.direction == Direcao.ESQUERDA:
+        if self.direcao == Direcao.ESQUERDA:
             self.pos_x += MOV_ESQUERDA
-        elif self.direction == Direcao.DIREITA:
+        elif self.direcao == Direcao.DIREITA:
             self.pos_x += MOV_DIREITA
-        elif self.direction == Direcao.CIMA:
+        elif self.direcao == Direcao.CIMA:
             self.pos_y += MOV_CIMA
-        elif self.direction == Direcao.BAIXO:
+        elif self.direcao == Direcao.BAIXO:
             self.pos_y += MOVE_BAIXO
 
         # Cria uma lista contendo as coordenadas atualizadas da cabeça da cobra
