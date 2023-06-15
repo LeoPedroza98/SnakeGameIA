@@ -17,4 +17,4 @@ Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o 
 1. Clone este repositório para o seu ambiente local:
 
 ```shell
-git@github.com:LeoPedroza98/SnakeGameIA.git
+[[git@github.com:LeoPedroza98/SnakeGameIA.git](https://github.com/LeoPedroza98/SnakeGameIA.git)](https://github.com/LeoPedroza98/SnakeGameIA.git)https://github.com/LeoPedroza98/SnakeGameIA.git
