@@ -82,5 +82,5 @@ class DeepQGame(BaseGame, DeepQTreinamento):
 if __name__ == '__main__':
     path = "./models/deepq_base_treinamento/"
     deep_q_visualiser = DeepQGame()
-    deep_q_visualiser.funcao_visualizacao(path, 7, True)
+    deep_q_visualiser.funcao_visualizacao(path, 6, True)
 

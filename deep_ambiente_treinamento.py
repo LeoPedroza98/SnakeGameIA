@@ -95,7 +95,7 @@ class DeepQTreinamento(BaseTreinamento):
             else:
                 passos_sem_comida += 1
 
-            if passos_sem_comida == 1000:
+            if passos_sem_comida == 200:
                 break
 
         return self.funcao_tamanho_cobra()

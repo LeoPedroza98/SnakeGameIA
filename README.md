@@ -18,3 +18,18 @@ Certifique-se de ter as bibliotecas necessárias instaladas antes de executar o 
 
 ```shell
 https://github.com/LeoPedroza98/SnakeGameIA.git
+
+
+```
+2.Após clonar o repositorio:
+Para o ambiente de jogo normal apenas execute o classe game.py
+Para o ambiente de treinamento execute a classe deep_treinamento_game.py e se quiser analisar o desempenho visualmente daquele modelo.
+Modifique a main da classe e execute
+
+Refêrencias:
+https://www.youtube.com/watch?v=L8ypSXwyBds&t=1632s
+https://repositorio.ufsm.br/bitstream/handle/1/21432/TG460_Daniel%20Matheus%20Doebber.pdf?sequence=1
+https://materialpublic.imd.ufrn.br/curso/disciplina/5/69/10/2
+https://acervolima.com/ai-driven-snake-game-usando-deep-q-learning/
+https://sol.sbc.org.br/index.php/eniac/article/view/18285
+https://medium.com/data-hackers/entendendo-porque-é-que-a-distância-certa-faz-toda-a-diferença-648030c9bae2
