@@ -25,7 +25,7 @@ class DeepQTreinamentoIA:
 
         # Configurações do ambiente
         self.geracoes = 200  # Número de gerações de treinamento
-        self.geracoes_tam = 200 
+        self.geracoes_tam = 1000
 
         self.env = DeepQTreinamento()  
         self.memory = deque(maxlen=2000)  # Replay buffer para armazenar transições de estado e memoria
@@ -85,9 +85,9 @@ class DeepQTreinamentoIA:
         # Salva o modelo de treinamento em determinadas gerações
         should_save = False
 
-        if geracao < 30:
+        if geracao < 10:
             should_save = True
-        elif 30 <= geracao < 200 and geracao % 30 == 0:
+        elif 10 <= geracao < 200 and geracao % 10 == 0:
             should_save = True
         elif geracao <= 200 and geracao % 50 == 0:
             should_save = True
