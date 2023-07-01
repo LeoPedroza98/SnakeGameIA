@@ -82,10 +82,10 @@ class DeepQTreinamento(BaseTreinamento):
         passos_sem_comida = 0
 
         while self.vivo:
-            state = self.funcao_retorno_estado_snake()
-            state = np.reshape(state, (1, self.state_space))
+            estado = self.funcao_retorno_estado_snake()
+            estado = np.reshape(estado, (1, self.state_space))
 
-            action_index = np.argmax(model.predict(state, verbose=0)[0])
+            action_index = np.argmax(model.predict(estado, verbose=0)[0])
             action = Direcao(action_index)
             self.passos_snake(action)
 

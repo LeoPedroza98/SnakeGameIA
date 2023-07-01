@@ -52,9 +52,9 @@ class DeepQTreinamentoIA:
         act_values = self.model.predict(state, verbose=0)
         return np.argmax(act_values[0])
 
-    def funcao_remember_treinamento(self, state, action, reward, new_state, done):
+    def funcao_remember_treinamento(self, estado, action, reward, new_state, done):
         # Armazena uma transição de estado no replay buffer
-        self.memory.append((state, action, reward, new_state, done))
+        self.memory.append((estado, action, reward, new_state, done))
 
     def funcao_replay(self):
         # Realiza a atualização dos pesos da rede neural usando o replay buffer
@@ -62,22 +62,22 @@ class DeepQTreinamentoIA:
             return
 
         minibatch = random.sample(self.memory, self.batch_size)
-        states = np.array([i[0] for i in minibatch])
+        estados = np.array([i[0] for i in minibatch])
         actions = np.array([i[1] for i in minibatch])
         rewards = np.array([i[2] for i in minibatch])
         next_states = np.array([i[3] for i in minibatch])
         dones = np.array([i[4] for i in minibatch])
 
-        states = np.squeeze(states)
+        estados = np.squeeze(estados)
         next_states = np.squeeze(next_states)
 
         targets = rewards + self.gamma * (np.amax(self.model.predict_on_batch(next_states), axis=1)) * (1 - dones)
-        targets_full = self.model.predict_on_batch(states)
+        targets_full = self.model.predict_on_batch(estados)
 
         ind = np.array([i for i in range(self.batch_size)])
         targets_full[[ind], [actions]] = targets
 
-        self.model.fit(states, targets_full, epochs=1, verbose=0)
+        self.model.fit(estados, targets_full, epochs=1, verbose=0)
         if self.epsilon > self.epsilon_min:
             self.epsilon *= self.epsilon_decay
 
@@ -112,19 +112,19 @@ class DeepQTreinamentoIA:
             gc.collect()
             self.env = DeepQTreinamento()
 
-            current_state = self.env.funcao_retorno_estado_snake()
-            current_state = np.reshape(current_state, (1, self.env.state_space))
+            estado_atual = self.env.funcao_retorno_estado_snake()
+            estado_atual = np.reshape(estado_atual, (1, self.env.state_space))
             geracao_reward = 0
 
             for i in range(self.geracoes_tam):
-                action = self.funcao_acao_treinamento(current_state)
+                action = self.funcao_acao_treinamento(estado_atual)
                 new_state, reward, done = self.env.passos_snake(Direcao(action))
                 new_state = np.reshape(new_state, (1, self.env.state_space))
                 geracao_reward += reward
 
-                self.funcao_remember_treinamento(current_state, action, reward, new_state, done)
+                self.funcao_remember_treinamento(estado_atual, action, reward, new_state, done)
 
-                current_state = new_state
+                estado_atual = new_state
 
                 self.funcao_replay()
 
