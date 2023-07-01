@@ -32,6 +32,11 @@ Após clonar o repositório, você pode executar o jogo no ambiente normal atrav
 
 Para executar o ambiente de treinamento, utilize o arquivo deep_treinamento_game.py. Se desejar visualizar o desempenho visual de um modelo específico, modifique a função main deste arquivo e execute-o.
 ```
+**Agradecimentos**
+
+
+**Deixo aqui nesta seção meus agradecimentos aos professores Fernando Ferreira e Hélio Nascimento por todo suporte nas disciplina que me fizeram ousar para realizar este projeto com todos os seus conceitos complexos pois foi um porjeto no qual adquiri bastante conhecimento**
+
 
 **Referências**
 
@@ -42,3 +47,6 @@ Você pode consultar essas referências para obter mais informações sobre o pr
 - [Simpósio Brasileiro de Computação Aplicada à Saúde - SBAC-SBC - Artigo: AI-Driven Snake Game using Deep Q-Learning](https://sol.sbc.org.br/index.php/eniac/article/view/18285)
 - [Data Hackers - Entendendo Porque é que a Distância Certa Faz Toda a Diferença](https://medium.com/data-hackers/entendendo-porque-é-que-a-distância-certa-faz-toda-a-diferença-648030c9bae2)
 
+## Autores
+
+- [Leonardo Pedroza](https://github.com/LeoPedroza98)
